@@ -1661,6 +1661,9 @@ section {
 .arrow{
     
     margin-top: 50px;
+    position:absolute;
+    left: 50%;
+    bottom: 10%;
    
 }
 

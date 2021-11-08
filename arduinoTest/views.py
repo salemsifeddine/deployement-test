@@ -4,5 +4,6 @@ from .models import *
 # Create your views here.
 
 def home(request):
+    students= ["salem","sif","joe"]
 
-    return render(request, 'pages/home.html',{"students":Students.objects.all()})
+    return render(request, 'pages/home.html',{"students":students})

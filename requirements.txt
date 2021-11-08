@@ -19,6 +19,7 @@ selenium==3.141.0
 serial==0.0.97
 six==1.16.0
 sniffio==1.2.0
+Django==3.2.9
 social-auth-app-django==5.0.0
 social-auth-core==4.1.0
 soupsieve==2.2.1

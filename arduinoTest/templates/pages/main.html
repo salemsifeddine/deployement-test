@@ -88,61 +88,7 @@
   
     
 
-    {% for event in events %}
-
-    <div class="back event">
-      
-      
-        <div class="text-event">
-            <div >
-                <h2>{{event.title}}</h2>
-            </div><br>
-        <div class="bcontainer-index text-desc">
-            <b class="title"><i>More About The Event:</i></b><br><br>
-            <p>{{event.description}}
-            </p>
-            <div class="btnglow">
-                <a href="{% url 'applyEvent' event.id %}"><button class="submit">Register Now</button></a>
-            </div>
-        </div>
-        </div>
-        <div class="backimg">
-            
-            <img src="{{event.imageBackground.url }}" alt="">
-        </div>     
-    </div>
-    {% empty %}
-
-
-    {% endfor %}
-    {% for btcmp in bootcamps %}
-
-    <div class="back event">
-      
-      
-        <div class="text-event">
-            <div >
-                <h2>{{btcmp.title}}</h2>
-            </div><br>
-        <div class="bcontainer-index text-desc">
-            <b class="title"><i>More About The Event:</i></b><br><br>
-            <p>{{btcmp.description}}
-            </p>
-            <div class="btnglow">
-                <a href="{% url 'applyBootcamp' btcmp.id %}"><button class="submit">Register Now</button></a>
-            </div>
-        </div>
-        </div>
-        <div class="backimg">
-            
-            <img src="{{btcmp.imageBackground.url }}" alt="">
-            
-        </div>     
-    </div>
-    {% empty %}
-
-
-    {% endfor %}
+   
 
     
   <!---->
@@ -199,7 +145,61 @@
       <br><br>
       
   </div> -->
+  {% for event in events %}
 
+  <div class="back event">
+    
+    
+    <div class="text-event">
+          <div >
+              <h2>{{event.title}}</h2>
+          </div><br>
+      <div class="bcontainer-index text-desc">
+          <b class="title"><i>More About The Event:</i></b><br><br>
+          <p>{{event.description}}
+          </p>
+          <div class="btnglow">
+              <a href="{% url 'applyEvent' event.id %}"><button class="submit">Register Now</button></a>
+          </div>
+      </div>
+    </div>
+      <div class="backimg">
+          
+          <img src="{{event.imageBackground.url }}" alt="">
+      </div>     
+  </div>
+  {% empty %}
+
+
+  {% endfor %}
+  {% for btcmp in bootcamps %}
+
+  <div class="back event">
+    
+    
+    <div class="text-event">
+          <div >
+              <h2>{{btcmp.title}}</h2>
+          </div><br>
+      <div class="bcontainer-index text-desc">
+          <b class="title"><i>More About The Event:</i></b><br><br>
+          <p>{{btcmp.description}}
+          </p>
+          <div class="btnglow">
+              <a href="{% url 'applyBootcamp' btcmp.id %}"><button class="submit">Register Now</button></a>
+          </div>
+      </div>
+    </div>
+      <div class="backimg">
+          
+          <img src="{{btcmp.imageBackground.url }}" alt="">
+          
+      </div>     
+  </div>
+  {% empty %}
+
+
+  {% endfor %}
 {% endblock content %}
 
 

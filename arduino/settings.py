@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'arduinoTest',
     'phonenumber_field',
+    'rest_framework',
     'whitenoise.runserver_nostatic'
     
 ]

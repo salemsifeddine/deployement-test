@@ -6,4 +6,4 @@ from .models import *
 def home(request):
     students= ["salem","sif","joe"]
 
-    return render(request, 'pages/home.html',{"students":students})
+    return render(request, 'pages/home.html',{"students":Students.objects.all()})

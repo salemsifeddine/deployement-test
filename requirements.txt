@@ -45,3 +45,4 @@ xls==0.0.2
 XlsxWriter==3.0.1
 gunicorn==19.9.0
 django-phonenumber-field == 5.2.0
+phonenumbers==8.12.36

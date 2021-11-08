@@ -60,11 +60,11 @@ button{
 
 .header-right a {
     margin-right: 32px;
-    color: #333;
+    color: #FFF;
 }
 
 .header-right a:hover {
-    color: white;
+    color: #F0F0F0;
     text-decoration: none;
     transition-delay: 0.15s;
 }

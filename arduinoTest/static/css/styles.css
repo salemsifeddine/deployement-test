@@ -64,7 +64,7 @@ button{
 }
 
 .header-right a:hover {
-    color: #F0F0F0;
+    color: #333;
     text-decoration: none;
     transition-delay: 0.15s;
 }

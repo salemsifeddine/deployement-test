@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'arduinoTest',
+    'phonenumber_field',
+    'whitenoise.runserver_nostatic'
     
-    'arduinoTest'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'arduino.urls'
@@ -121,8 +124,47 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT= os.path.join(BASE_DIR,"saticfiles")
+STATIC_URL = '/static/'
+MEDIA_URL='/images/'
+
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,"static",)
+]
+
+MEDIA_ROOT= os.path.join(BASE_DIR,"static/images")
+
+LOGIN_REDIRECT_URL = "home"
+
+LOGIN_URL = "login"
+
+LOGIN_REDIRECT_URL= "home"
+LOGIN_URL ="login"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+#email sending data
+EMAIL_BACKEND= "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_POST= 587
+
+EMAIL_HOST_USER= "wameedh.sc@gmail.com"
+DEFAULT_FROM_EMAIL="wameedh.sc@gmail.com"
+SERVER_EMAIL="wameedh.sc@gmail.com"
+EMAIL_HOST_PASSWORD="ufexwgnmvbppdfrl"
+# for  security
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL= False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

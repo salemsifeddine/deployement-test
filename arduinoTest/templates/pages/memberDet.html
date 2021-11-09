@@ -1,0 +1,39 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="member">
+        <div class="content-left">
+            <div class="image">
+                <img src="{% static 'images/instagram.jpg' %}" alt="">
+            </div>
+            <div class="info">
+                <div class="fullname">
+                    <h3>Salem sif eddine</h3>
+                </div>
+                <div class="joined">
+                    <span>2019-2021</span>
+                </div>
+                <div class="moreinfo">
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i> salemsg@ah.com
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i> Inelec
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Boumerdes
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}

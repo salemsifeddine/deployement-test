@@ -1,3 +1,4 @@
+from os import name
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
@@ -208,3 +209,7 @@ class BootCampApplication(FormMixin,generic.DetailView):
 def application(request):
 
     return render(request,"pages/applicationForm.html")
+
+def memberDet(request):
+
+    return render(request,"pages/memberDet.html")

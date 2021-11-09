@@ -16,6 +16,7 @@ urlpatterns = [
     path("gallery",views.gallery,name="gallery"),
     path("projects",views.projects,name="projects"),
     path("team",views.team,name="team"),
+    path("team/detail",views.memberDet,name="teamDet"),
     path("application/",views.application,name="application"),
     path(r"apply/Events/<int:pk>/",views.EventApplication.as_view(),name="applyEvent"),
     path(r"apply/Bootcamps/<int:pk>/",views.BootCampApplication.as_view(),name="applyBootcamp"),

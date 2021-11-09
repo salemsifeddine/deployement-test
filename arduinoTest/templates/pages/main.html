@@ -145,6 +145,31 @@
       <br><br>
       
   </div> -->
+  <div class="back event" style="margin-bottom: 5px;" >
+    
+    
+    <div class="text-event">
+          <div >
+              <h2>You Have A project idea!!! </h2>
+              <h4 style="color: green;text-align: center;">
+                don't hesitate to contact us!
+              </h4>
+          </div><br>
+      <div class="bcontainer-index text-desc" >
+          
+          <p style="padding: 20px;" >You can contact us and tell us the components you need for your roject,
+              we can help you realize it easily!
+          </p>
+          <div class="btnglow">
+              <a href="{% url 'contact' %}"><button class="submit" style="background-color: #4885ed;">Contact us</button></a>
+          </div>
+      </div>
+    </div>
+      <div class="backimg">
+          
+          <img src="{% static 'images/p12.jpg' %}" alt="">
+      </div>     
+  </div>
   {% for event in events %}
 
   <div class="back event">

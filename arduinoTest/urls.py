@@ -20,6 +20,7 @@ urlpatterns = [
     path("application/",views.application,name="application"),
     path(r"apply/Events/<int:pk>/",views.EventApplication.as_view(),name="applyEvent"),
     path(r"apply/Bootcamps/<int:pk>/",views.BootCampApplication.as_view(),name="applyBootcamp"),
+    path("downloadfiles/",views.sendattachement, name="downloadfiles")
 ]
 
 if settings.DEBUG:

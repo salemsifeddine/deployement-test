@@ -26,8 +26,8 @@
         {% if member.position == "Président" %}
         <div class="team-card">
             <div>
-                <img src="{{member.image1.url}}" class="icon-inactive">
-                <img src="{{member.image2.url}}" class="icon">
+                <img src="{{member.image2.url}}" class="icon-inactive">
+                <img src="{{member.image1.url}}" class="icon">
             </div>
             <p class="team-title">{{member.name}}</p>
             <p class="team-text" id="{{member.id}}">{{member.position}}</p>
@@ -44,8 +44,8 @@
     {% if member.position != "Président" %}
     <div class="team-card">
         <div>
-            <img src="{{member.image1.url}}" class="icon-inactive">
-            <img src="{{member.image2.url}}" class="icon">
+            <img src="{{member.image2.url}}" class="icon-inactive">
+            <img src="{{member.image1.url}}" class="icon">
         </div>
         <p class="team-title">{{member.name}}</p>
         <p class="team-text" id="{{member.id}}">{{member.position}}</p>

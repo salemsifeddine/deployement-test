@@ -1,4 +1,3 @@
-from os import name
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
@@ -47,9 +46,10 @@ def contactUs(request):
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
             query = form.cleaned_data["query"]
-            with open("wameedh\static\data\contact.csv","a",newline="") as file:
+            dateadded= datetime.datetime.today()
+            with open("arduinoTest\static\data\contact.csv","a",newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow([first_name,last_name,email,query])
+                writer.writerow([first_name,last_name,email,query,dateadded])
             file.close()
             #    template=get_template("pages/applicationbootcamp.html").render(context_data)
             msg=EmailMessage(
@@ -84,7 +84,7 @@ def team(request):
     return render(request,"pages/team.html",{"teams":teams})
 
 
-
+import datetime
 class EventApplication(FormMixin,generic.DetailView):
     model=ClubEvents
     form_class=Aplly
@@ -105,7 +105,7 @@ class EventApplication(FormMixin,generic.DetailView):
     
     
     def form_valid(self, form):
-        print(self.kwargs["title"])
+        
         email = form.cleaned_data["email"]
         first_name = form.cleaned_data["first_name"]
         last_name = form.cleaned_data["last_name"]
@@ -114,16 +114,16 @@ class EventApplication(FormMixin,generic.DetailView):
         major_of_study = form.cleaned_data["major_of_study"]
         year_of_study = form.cleaned_data["year_of_study"]
         why = form.cleaned_data["why"]
-
+        dateadded=datetime.datetime.today()
         edition=ClubEvents.objects.get(title=self.object.title).edition
         title=ClubEvents.objects.get(title=self.object.title).title
 
    
 
-        with open("wameedh/static/data/applicationForm.csv","a",newline="") as f:
+        with open("arduinoTest/static/data/applicationForm.csv","a",newline="") as f:
             writer = csv.writer(f)
             writer.writerow([first_name,last_name,email,phonenumber,place_living,
-            major_of_study,year_of_study,why])
+            major_of_study,year_of_study,why,dateadded])
         f.close()
         context_data={
             "name":f"{first_name} - {last_name}",
@@ -175,7 +175,8 @@ class BootCampApplication(FormMixin,generic.DetailView):
         edition=BootCamp.objects.get(title=self.object.title).edition
         title=BootCamp.objects.get(title=self.object.title).title
 
-        with open("wameedh/static/data/applicationForm.csv","a",newline="") as f:
+       
+        with open("arduinoTest/static/data/applicationForm.csv","a",newline="") as f:
             writer = csv.writer(f)
             writer.writerow([first_name,last_name,email,phonenumber,place_living,
             major_of_study,year_of_study,why])
@@ -213,3 +214,29 @@ def application(request):
 def memberDet(request):
 
     return render(request,"pages/memberDet.html")
+
+import csv
+from io import StringIO
+from django.core.mail import EmailMessage
+
+def sendattachement(request):
+
+    
+    email = EmailMessage(
+            'Subject',
+            'Body',
+            'wameedh.sc@gmail.com',
+            ['saiftony5@gmail.com'],
+        )
+    
+    with open("arduinoTest/static/data/applicationForm.csv", "rb") as csvfile:
+                
+        email.attach("applicationForm", csvfile.read(), 'text/csv')
+
+    with open("arduinoTest/static/data/contact.csv", "rb") as csvfilec:
+                
+        email.attach("contact", csvfilec.read(), 'text/csv')
+        
+    email.send()
+
+    return HttpResponse("Sent Succesfully!!")

@@ -5,7 +5,7 @@ var swalOverlay  = document.querySelector(".swal-overlay")
 
 
         document.getElementById("form").addEventListener("submit",function(){
-            e.preventDefault();
+            
            
             swalOverlay.style.opacity = 1
             swal("Thank You!!", "", "success");

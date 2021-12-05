@@ -62,7 +62,7 @@
 
 
     <div class="col-md-8 left-form">
-       <form method="post" action="">
+       <form method="post" action="" id="form">
           {% csrf_token %}
           
           <div class="form-group">
@@ -156,4 +156,21 @@
           
       
     </div>
+
+    <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">
+      <div class="swal-modal"><div class="swal-icon swal-icon--success">
+        <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+        <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+    
+        <div class="swal-icon--success__ring"></div>
+        <div class="swal-icon--success__hide-corners"></div>
+      </div>
+      <div class="swal-title"></div>
+        <div class="swal-button__loader">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+    
+      </div>
 {% endblock content %}

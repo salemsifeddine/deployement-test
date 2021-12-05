@@ -375,6 +375,9 @@ article p {
     }
 }
 @media screen and (max-width:414px) {
+    .swal-modal{
+        width:340px;
+    }
     
     .main-info {
         /*width: 100%;*/

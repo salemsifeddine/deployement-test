@@ -114,6 +114,17 @@
         </div>
     </footer>
 
+    <div class="ballRealoader" id="ballRealoader">
+        <div id="ball1" class="animsition-loading-1">
+            <div data-loader="ball-scale"></div>
+    </div>
+    </div>
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementById("ballRealoader").style.display="none"
+        })
+    </script>
+
     <!-- Scroller -->
     <!-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
     <!-- Footer ends -->
@@ -135,7 +146,7 @@
     <script src="{% static 'javascript/particles.js' %}"></script>
     <script src="{% static 'javascript/app.js' %}"></script>
     <script src="{% static 'javascript/particles.min.js' %}"></script>
- 
+    <script type="text/javascript" src="{% static 'javascript/sweetalert.min.js' %}"></script>
     {% block js %}
     {% endblock js %}
 

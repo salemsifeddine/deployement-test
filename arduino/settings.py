@@ -159,10 +159,10 @@ EMAIL_BACKEND= "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_POST= 587
 
-EMAIL_HOST_USER= "wameedh.sc@gmail.com"
-DEFAULT_FROM_EMAIL="wameedh.sc@gmail.com"
-SERVER_EMAIL="wameedh.sc@gmail.com"
-EMAIL_HOST_PASSWORD="ufexwgnmvbppdfrl"
+EMAIL_HOST_USER= "wameedh.contact@gmail.com"
+DEFAULT_FROM_EMAIL="wameedh.contact@gmail.com"
+SERVER_EMAIL="wameedh.contact@gmail.com"
+EMAIL_HOST_PASSWORD="jtyswwnflzbecqyy"
 # for  security
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL= False

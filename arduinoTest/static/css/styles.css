@@ -2390,6 +2390,12 @@ a{
     background-color: #e65540;
 }
 
+.ballRealoader svg{
+    -webkit-animation: bulb-scale infinite linear .75s;
+    -moz-animation: bulb-scale infinite linear .75s;
+    -o-animation: bulb-scale infinite linear .75s;
+    animation: bulb-scale infinite linear .75s alternate;
+}
 
 @-webkit-keyframes ball-scale {
     0% {
@@ -2406,6 +2412,26 @@ a{
         -o-transform: scale(1);
         transform: scale(1);
         opacity: 0;
+    }
+}
+
+@keyframes bulb-scale {
+    0% {
+        -webkit-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        transform: scale(.1);
+        transform: rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        transform: rotate(-45deg);
+        /* opacity: 0; */
     }
 }
 

@@ -1664,7 +1664,7 @@ section {
     position:absolute;
     left: 50%;
     bottom: 10%;
-   
+   z-index: 9999999999999999999;
 }
 
 .arrow a{
@@ -1672,6 +1672,7 @@ section {
     font-size: 22px;
 }
 .bounce {
+    text-align: center;
     -moz-animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
     animation: bounce 2s infinite;
